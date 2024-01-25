@@ -68,12 +68,38 @@
     <script>
         function clickProduct(productName) {
             console.log("Producto visto: " + productName);
-            // Aquí iría el código para taguear el evento 'clickProduct' en GA4
+            // Measure a view of product details. This example assumes the detail view occurs on pageload,
+            dataLayer.push({ ecommerce: null });  // Clear the previous ecommerce object.
+            dataLayer.push({
+            event: "view_item",
+            ecommerce: {
+                items: [{
+                item_name: productName, // Name or ID is required.
+                item_id: "123",
+                price: 33.75,
+                index: 1,  // If associated with a list selection.
+                quantity: 1
+                }]
+            }
+            });
         }
 
         function addToCart(productName) {
             console.log("Producto añadido al carrito: " + productName);
-            // Aquí iría el código para taguear el evento 'addToCart' en GA4
+            // Measure when a product is added to a shopping cart
+            dataLayer.push({ ecommerce: null });  // Clear the previous ecommerce object.
+            dataLayer.push({
+            event: "add_to_cart",
+            ecommerce: {
+                items: [{
+                item_name: productName, // Name or ID is required.
+                item_id: "123",
+                price: 33.75,
+                index: 1,
+                quantity: 1
+                }]
+            }
+            });
         }
     </script>
 
