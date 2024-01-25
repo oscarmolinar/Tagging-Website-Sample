@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Guía de Tagueo de Eventos</title>
+    <style>
+        .producto {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .boton {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            margin: 10px 0;
+            border: none;
+            cursor: pointer;
+        }
+        .boton:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Productos Destacados</h2>
+
+<div id="productos">
+    <div class="producto" id="producto1">
+        <h3>Producto 1</h3>
+        <p>Descripción del Producto 1</p>
+        <button class="boton" onclick="clickProduct('Producto 1')">Ver Producto</button>
+        <button class="boton" onclick="addToCart('Producto 1')">Añadir al Carrito</button>
+    </div>
+    
+    <div class="producto" id="producto2">
+        <h3>Producto 2</h3>
+        <p>Descripción del Producto 2</p>
+        <button class="boton" onclick="clickProduct('Producto 2')">Ver Producto</button>
+        <button class="boton" onclick="addToCart('Producto 2')">Añadir al Carrito</button>
+    </div>
+    
+    <div class="producto" id="producto3">
+        <h3>Producto 3</h3>
+        <p>Descripción del Producto 3</p>
+        <button class="boton" onclick="clickProduct('Producto 3')">Ver Producto</button>
+        <button class="boton" onclick="addToCart('Producto 3')">Añadir al Carrito</button>
+    </div>
+</div>
+
+<script>
+    function clickProduct(productName) {
+        console.log("Producto visto: " + productName);
+        // Aquí iría el código para taguear el evento 'clickProduct' en GA4
+    }
+
+    function addToCart(productName) {
+        console.log("Producto añadido al carrito: " + productName);
+        // Aquí iría el código para taguear el evento 'addToCart' en GA4
+    }
+</script>
+
+</body>
+</html>
